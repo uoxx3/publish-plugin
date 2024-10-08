@@ -1,18 +1,13 @@
 package uoxx3.gradle.publish.utilities;
 
 import org.gradle.api.Project;
-import org.gradle.api.Task;
-import org.gradle.api.artifacts.PublishArtifact;
 import org.gradle.api.artifacts.repositories.MavenArtifactRepository;
-import org.gradle.api.publish.maven.MavenArtifact;
 import org.gradle.api.publish.maven.MavenPom;
 import org.gradle.api.publish.maven.MavenPublication;
-import org.gradle.api.tasks.bundling.AbstractArchiveTask;
 import org.jetbrains.annotations.NotNull;
 import uoxx3.gradle.publish.Context;
 import uoxx3.gradle.publish.model.*;
 
-import java.io.File;
 import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -49,6 +44,7 @@ public final class MavenUtilities extends CommonRepositoryUtilities {
 	 * @param projectSpec    the project specification, must not be {@code null}.
 	 * @param repository     the MavenArtifactRepository to configure, must not be {@code null}.
 	 */
+	@SuppressWarnings("unused")
 	public static void configureRepository(
 		@NotNull Context ctx,
 		@NotNull Project project,
@@ -128,6 +124,7 @@ public final class MavenUtilities extends CommonRepositoryUtilities {
 	 * @param publicationSpec the publication specification detailing the POM settings,
 	 *                        must not be {@code null}.
 	 */
+	@SuppressWarnings("unused")
 	private static void configurePom(
 		@NotNull Context ctx,
 		@NotNull MavenPom pom,
