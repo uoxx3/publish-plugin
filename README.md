@@ -1,5 +1,7 @@
 ## Publish Plugin
 
+![Badge](https://github.com/uoxx3/publish-plugin/actions/workflows/publication.yml/badge.svg)
+
 Gradle plugin used to automatically configure Maven or Ivy releases, without dying in the attempt.
 
 All configuration is defined in a "project.json" file and the plugin will make the changes automatically.
@@ -9,6 +11,7 @@ All configuration is defined in a "project.json" file and the plugin will make t
 This plugin only works on gradle projects and should be used as follows.
 
 `build.gradle`
+
 ```groovy
 plugins {
     id 'io.github.uoxx3.publishing' version '1.0'
@@ -16,6 +19,7 @@ plugins {
 ```
 
 `build.gradle.kts`
+
 ```kotlin
 plugins {
     id("io.github.uoxx3.publishing") version "1.0"
@@ -27,12 +31,14 @@ and that's it, the plugin will take care of the tedious configurations for you.
 If you want to access any configuration, you can access it through the extension defined within the project.
 
 `build.gradle`
+
 ```groovy
 // Access to configuration
 println projectSpec.version()
 ```
 
 `build.gradle.kts`
+
 ```kotlin
 // Access to configuration
 println(projectSpec.version())
@@ -372,11 +378,12 @@ Environment variables can be those already defined in the system or any that are
 
 All fields will be resolved when loading the project and no modifications are needed in the build.gradle file.
 
-If the `developers` field is set to `Reference` then it will look for the file specified in the `location` field and 
-load all the information from the file. It is also possible to perform a mixed load where you can fill in the information 
+If the `developers` field is set to `Reference` then it will look for the file specified in the `location` field and
+load all the information from the file. It is also possible to perform a mixed load where you can fill in the information
 from the `developers` field and also load the file from the `location` field.
 
 `project.json`
+
 ```json5
 {
     "group": "<group-id>",
@@ -389,8 +396,10 @@ from the `developers` field and also load the file from the `location` field.
             "url": "<maven-repository-url>",
             "regex": "<regular-expression-version-match>",
             "credentials": {
-                "user": "{REPO_USERNAME}",    // From environment variable
-                "password": "{REPO_PASSWORD}" // From environment variable
+                "user": "{REPO_USERNAME}",
+                // From environment variable
+                "password": "{REPO_PASSWORD}"
+                // From environment variable
             }
         },
         {
@@ -416,8 +425,10 @@ from the `developers` field and also load the file from the `location` field.
                 "description": "<publication-project-description>",
                 "url": "<project-url>",
                 "developers": {
-                    "type": "ref", // Reference | Raw
-                    "location": "{PROJECT_ROOT}/developers.json", // Only if type Reference
+                    "type": "ref",
+                    // Reference | Raw
+                    "location": "{PROJECT_ROOT}/developers.json",
+                    // Only if type Reference
                     "developers": [
                         {
                             "id": "<username-or-id>",
