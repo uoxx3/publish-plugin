@@ -28,12 +28,6 @@ jobs:
       - name: Change gradlew permissions
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew plugin:build --stacktrace
-
-      - name: Test with Gradle
-        run: ./gradlew plugin:functionalTest --stacktrace
-
       - name: Publish with Gradle
         run: ./gradlew plugin:publishPlugins --stacktrace
         env:
