@@ -54,7 +54,7 @@ class PublishPluginPluginFunctionalTest {
 		GradleRunner runner = GradleRunner.create();
 		runner.forwardOutput();
 		runner.withPluginClasspath();
-		runner.withArguments("publishToMavenLocal", "--stacktrace");
+		runner.withArguments("tasks", "--stacktrace");
 		runner.withProjectDir(projectDir);
 		BuildResult result = runner.build();
 
