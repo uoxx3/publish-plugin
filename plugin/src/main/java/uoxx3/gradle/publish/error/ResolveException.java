@@ -22,6 +22,7 @@ package uoxx3.gradle.publish.error;
  * This could occur due to various issues during the resolution process,
  * such as unresolved references or invalid configurations.
  */
+@SuppressWarnings("unused")
 public class ResolveException extends Exception {
 
 	/**

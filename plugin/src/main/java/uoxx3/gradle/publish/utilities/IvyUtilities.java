@@ -49,6 +49,7 @@ public final class IvyUtilities extends CommonRepositoryUtilities {
 	 * @param projectSpec    the specifications for the project
 	 * @param repository     the Ivy artifact repository to configure
 	 */
+	@SuppressWarnings("unused")
 	public static void configureRepository(
 		@NotNull Context ctx,
 		@NotNull Project project,
@@ -129,6 +130,7 @@ public final class IvyUtilities extends CommonRepositoryUtilities {
 	 * @param projectSpec     the specifications for the project
 	 * @param publicationSpec the specifications for the publication
 	 */
+	@SuppressWarnings("unused")
 	private static void configureDescriptor(
 		@NotNull Context ctx,
 		@NotNull IvyModuleDescriptorSpec descriptor,
