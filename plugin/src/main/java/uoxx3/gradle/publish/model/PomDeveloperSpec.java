@@ -98,7 +98,7 @@ public final class PomDeveloperSpec implements ResVal {
 	@Override
 	public void resolve(@NotNull Context ctx) throws ResolveException {
 		// Open the developer file and read contents
-		if (type != DeveloperType.Reference) return;
+		if (type() != DeveloperType.Reference || location().isEmpty()) return;
 		Path resolved = Path.of(location);
 
 		try (InputStream resourceStream = Files.newInputStream(resolved);
@@ -128,7 +128,7 @@ public final class PomDeveloperSpec implements ResVal {
 	public void validate(@NotNull Context ctx) throws ValidationException {
 		ValidatorUtils.validateNotNullProperties(this);
 		// Type dependencies
-		switch (type) {
+		switch (type()) {
 			case Raw -> ValidatorUtils.validateNotNullNamedProperties(this, "developers");
 			case Reference -> {
 				ValidatorUtils.validateNotNullNamedProperties(this, "location");
