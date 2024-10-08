@@ -1,0 +1,16 @@
+[
+  {
+    "id": "uoxx3",
+    "name": "Brian Alvarez",
+    "email": "brianalvarezpersonal@outlook.com",
+    "roles": [
+      "developer",
+      "owner",
+      "etc"
+    ],
+    "organization": {
+      "name": "example",
+      "url": "https://organization.example"
+    }
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "group": "com.github.uoxx3",
+  "name": "example",
+  "version": "1.0.0-SNAPSHOT",
+  "publications": [
+    {
+      "type": "mvn",
+      "name": "Maven Publication Example",
+      "component": "java",
+      "artifacts": [
+        {
+          "type": "task",
+          "name": "javadoc-jar"
+        }
+      ],
+      "pom": {
+        "id": "example-id",
+        "description": "Lorem Impsut door amet",
+        "url": "https://github.com/uoxx3/example.git",
+        "developers": {
+          "type": "ref"
+        },
+        "scm": {
+          "url": "https://github.com/uoxx3/example.git",
+          "connection": "scm:git:git@github.com:uoxx3/example.git",
+          "developer-connection": "scm:git:git@github.com:uoxx3/example.git"
+        }
+      }
+    }
+  ]
+}
